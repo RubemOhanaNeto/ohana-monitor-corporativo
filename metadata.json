@@ -1,0 +1,6 @@
+{
+  "name": "OHANA Monitor Corporativo",
+  "description": "Plataforma de inteligência corporativa, monitoramento e vigilância empresarial do OHANA Orquestrador, integrando fontes oficiais, 12 diretorias executivas e inteligência artificial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

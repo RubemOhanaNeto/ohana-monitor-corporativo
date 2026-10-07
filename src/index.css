@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+/* UI/UX Pro Max Global Accessibility & Interaction Rules */
+:root {
+  --focus-ring-color: #10b981;
+  --focus-ring-offset: #0f172a;
+}
+
+/* Accessible focus visible outlines */
+:focus-visible {
+  outline: 2px solid var(--focus-ring-color) !important;
+  outline-offset: 2px !important;
+}
+
+/* Subtle scrollbars for horizontal tab navigation & data panels */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.8);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 85, 105, 1);
+}
+
+/* Hide scrollbar for clean horizontal tab strips while preserving touch momentum scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Enforce smooth font rendering and baseline accessibility */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   PRINT STYLES (@media print) - Formatação Profissional A4 Sem Cortes / Scroll
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 15mm 12mm;
+  }
+
+  /* Ocultar elementos de tela e interações não imprimíveis */
+  .no-print,
+  button,
+  input,
+  select,
+  textarea,
+  nav,
+  header,
+  footer,
+  aside,
+  .print\\:hidden,
+  [role="tooltip"],
+  .tooltip,
+  .shadow-2xl,
+  .shadow-xl,
+  .shadow-lg,
+  .shadow-md,
+  .shadow-sm,
+  .shadow-xs {
+    display: none !important;
+  }
+
+  /* Reset de layout para permitir que o conteúdo ocupe a folha sem cortes */
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    line-height: 1.45 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Desativar sombras pesadas, transições e barras de rolagem */
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  *::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Modal como documento imprimível em folha contínua */
+  #modal-ficha-novidade {
+    position: static !important;
+    display: block !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: auto !important;
+  }
+
+  #modal-ficha-novidade > div {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  /* Evitar quebras de página desagradáveis no meio de cards, itens de ação e auditoria */
+  .print-avoid-break,
+  .acao-card,
+  .auditoria-card,
+  .timeline-auditoria-item,
+  .card,
+  article,
+  section,
+  tr,
+  blockquote,
+  .border {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Parágrafos e títulos protegidos contra órfãos e viúvas */
+  p, h1, h2, h3, h4, h5, h6 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  /* Quebras de página controladas para relatórios multi-página */
+  .print-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  /* Otimização de cores de bordas e fundos para tinta de impressão */
+  .bg-slate-900,
+  .bg-slate-950 {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+  }
+
+  .border-slate-200,
+  .border-slate-300 {
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Links limpos sem azul saturado */
+  a {
+    color: #0f172a !important;
+    text-decoration: none !important;
+  }
+}
