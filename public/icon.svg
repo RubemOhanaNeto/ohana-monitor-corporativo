@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Shield Base -->
+  <path d="M256 80 L390 135 C390 260 330 365 256 415 C182 365 122 260 122 135 Z" 
+        fill="url(#shieldGrad)" 
+        stroke="#60a5fa" 
+        stroke-width="6" 
+        stroke-linejoin="round" />
+
+  <!-- Inner Shield Glow Line -->
+  <path d="M256 106 L368 153 C368 253 318 340 256 384 C194 340 144 253 144 153 Z" 
+        fill="#0f172a" 
+        opacity="0.85" />
+
+  <!-- Pulse / Monitor ECG Wave -->
+  <path d="M170 260 L215 260 L235 200 L256 320 L277 230 L295 260 L342 260" 
+        fill="none" 
+        stroke="#38bdf8" 
+        stroke-width="12" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+
+  <!-- Central Star / Node -->
+  <circle cx="256" cy="175" r="14" fill="#60a5fa" />
+  <circle cx="256" cy="175" r="6" fill="#ffffff" />
+</svg>

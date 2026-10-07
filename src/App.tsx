@@ -21,6 +21,7 @@ import { ModalDetalhesMateria } from './components/ModalDetalhesMateria';
 import { ModalNovaMateria } from './components/ModalNovaMateria';
 import { RelatorioConformidadeModal } from './components/RelatorioConformidadeModal';
 import { ModalStatusApis } from './components/ModalStatusApis';
+import { OfflineIndicator } from './components/OfflineIndicator';
 import { FiscalNoticia, FiscalAcao, FiscalServico, StatusAcao, EmpresaPerfil, DecisaoRubinho, AuditoriaLog } from './types';
 import { mockNoticiasFiscais, mockAcoesFiscais, mockServicosFunerarios, EMPRESAS_CADASTRADAS } from './data/mockFiscalData';
 import { Building2, X, AlertCircle, Briefcase, Bell, Clock, Flame, ChevronRight } from 'lucide-react';
@@ -758,6 +759,9 @@ export default function App() {
         isOpen={showModalStatusApis}
         onClose={() => setShowModalStatusApis(false)}
       />
+
+      {/* Indicador de Status Offline PWA */}
+      <OfflineIndicator />
     </div>
   );
 }

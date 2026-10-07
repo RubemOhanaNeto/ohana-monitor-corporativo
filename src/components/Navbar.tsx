@@ -23,6 +23,7 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { EmpresaPerfil, DiretoriaCodigo } from '../types';
+import { PWAInstallButton } from './PWAInstallButton';
 
 export type TabId =
   | 'painel-presidente'
@@ -313,6 +314,9 @@ export const Navbar: FC<NavbarProps> = ({
                 <span className="hidden lg:inline">APIs</span>
               </button>
             )}
+
+            {/* Instalação PWA */}
+            <PWAInstallButton />
 
             {/* Sincronizar */}
             <button
